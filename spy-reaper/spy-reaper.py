@@ -11,8 +11,13 @@ if sys.version_info.major == 2:
 try:
     import ibapi.order_condition
 except ImportError:
-    sys.path.append("/opt/ibapi-beta/pythonclient")
-    import ibapi.order_condition
+    try:
+        sys.path.append("/opt/ibapi-beta/pythonclient")
+        import ibapi.order_condition
+    except ImportError:
+        sys.path.append("twsapi 973.05 must be installed under a system path or '/opt/ibapi-beta/pythonclient'\n")
+        sys.exit(1)
+
 from ibapi.order import (OrderComboLeg, Order)
 from ibapi.common import *
 from ibapi.tag_value import TagValue
