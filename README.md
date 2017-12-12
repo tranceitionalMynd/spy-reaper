@@ -11,6 +11,7 @@ The goal of the algorithm is to outperform the S&P 500, while simultaneously min
 The manipulated stock is SPY- the S&P 500 ETF.
 
 Requires:
+* Python 3
 * TWS API 973.05 installed under a system path or '/opt/ibapi-beta/'
 * A running TWS or IB Gateway application to connect to
 
