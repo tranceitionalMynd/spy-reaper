@@ -16,7 +16,7 @@ except ImportError:
         sys.path.append("/opt/ibapi-beta/pythonclient")
         import ibapi.order_condition
     except ImportError:
-        sys.path.append("twsapi 973.05 must be installed under a system path or '/opt/ibapi-beta/pythonclient'\n")
+        sys.stderr.write("twsapi 973.05 must be installed under a system path or '/opt/ibapi-beta/pythonclient'\n")
         sys.exit(1)
 
 # Import remaining IB API modules
