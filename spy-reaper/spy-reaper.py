@@ -1,8 +1,8 @@
 import sys
 
 # System sanity checks
-if sys.version_info.major == 2:
-    sys.stderr.write("Python 2 is not supported.\n")
+if sys.version_info.major < 3:
+    sys.stderr.write("Python 3 is required.\n")
     sys.exit(1)
 
 try:
