@@ -1,4 +1,4 @@
-#Author Jamiel & Tyler 2
+#Author Jamiel & Tyler
 import sys
 
 # System sanity checks
