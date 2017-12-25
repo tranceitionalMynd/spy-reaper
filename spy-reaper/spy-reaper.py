@@ -33,6 +33,8 @@ def main():
     client_app.connect("127.0.0.1", port, clientId=0)
     if client_app.error:
         sys.exit(1)
+    sys.stderr.write("Handling incoming messages.\n")
+    client_app.run()
 
 if __name__ == "__main__":
     main()
