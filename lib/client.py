@@ -10,7 +10,7 @@ class Client(EClient):
     def __init__(self, wrapper):
         EClient.__init__(self, wrapper)
 
-class App(Wrapper, Client):
+class ClientApp(Wrapper, Client):
     def __init__(self):
         Wrapper.__init__(self)
         Client.__init__(self, wrapper=self)

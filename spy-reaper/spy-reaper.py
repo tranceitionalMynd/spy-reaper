@@ -22,13 +22,13 @@ except ImportError:
 # Import our modules
 script_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(script_dir + "/../lib/")
-from client import App
+from client import ClientApp
 
 def main():
     # Connect to the paper account port
     port = 7497
 
-    client_app = App()
+    client_app = ClientApp()
     sys.stderr.write("Connecting to TWS on port '{0}'.\n".format(port))
     client_app.connect("127.0.0.1", port, clientId=0)
     sys.stderr.write("serverVersion:{0}\nconnectionTime:{1}\n".format(client_app.serverVersion(), client_app.twsConnectionTime()))
