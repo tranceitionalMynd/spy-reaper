@@ -7,14 +7,16 @@ if sys.version_info.major < 3:
     sys.stderr.write("Python 3 is required.\n")
     sys.exit(1)
 
+alternate_path = "/opt/twsapi/pythonclient"
+
 try:
     import ibapi
 except ImportError:
     try:
-        sys.path.append("/opt/twsapi/pythonclient")
+        sys.path.append(alternate_path)
         import ibapi
     except ImportError:
-        sys.stderr.write("twsapi 973.05 must be installed under a system path or '/opt/ibapi-beta/pythonclient'\n")
+        sys.stderr.write("twsapi 973.05 must be installed under a system path or '{0}'\n".format(alternate_path))
         sys.exit(1)
 
 # Import our modules
