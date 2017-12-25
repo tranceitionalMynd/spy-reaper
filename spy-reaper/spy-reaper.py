@@ -20,8 +20,8 @@ except ImportError:
         sys.exit(1)
 
 # Import our modules
-script_dir = os.path.dirname(__file__)
-sys.path.append(script_dir + "../lib/")
+script_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(script_dir + "/../lib/")
 from client import App
 
 def main():
