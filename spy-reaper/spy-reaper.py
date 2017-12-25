@@ -29,8 +29,10 @@ def main():
     port = 7497
 
     client_app = App()
-    sys.stderr.write("Connecting to TWS on port '{0}'\n".format(port))
+    sys.stderr.write("Connecting to TWS on port '{0}'.\n".format(port))
     client_app.connect("127.0.0.1", port, clientId=0)
+    if client_app.error:
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
