@@ -31,8 +31,7 @@ def main():
     client_app = App()
     sys.stderr.write("Connecting to TWS on port '{0}'.\n".format(port))
     client_app.connect("127.0.0.1", port, clientId=0)
-    if client_app.error:
-        sys.exit(1)
+    sys.stderr.write("serverVersion:{0}\nconnectionTime:{1}\n".format(client_app.serverVersion(), client_app.twsConnectionTime()))
     sys.stderr.write("Handling incoming messages.\n")
     client_app.run()
 
