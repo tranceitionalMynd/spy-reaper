@@ -7,7 +7,7 @@ if sys.version_info.major < 3:
     sys.stderr.write("Python 3 is required.\n")
     sys.exit(1)
 if os.name == "nt":
-    alternate_path = "C:\TWS API\source\pythonclient"
+    alternate_path = "C:\\TWS API\\source\\pythonclient"
 else:
     alternate_path = "/opt/twsapi/pythonclient"
 
@@ -20,7 +20,15 @@ except ImportError:
     except ImportError:
         sys.stderr.write("twsapi 973.05 must be installed under a system path or '{0}'\n".format(alternate_path))
         sys.exit(1)
+#Version check, please check if this works.    
+tws_api_ver = ibapi.get_version_string()
+tws_req_ver = "9.73.2"
 
+if tws_api_ver != tws_req_ver:
+    raise sys.stderr.write("twsapi version '{0}' required, version installed is '{1}'".format(tws_req_ver, tws_api_ver))
+
+    
+    
 # Import our modules
 script_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(script_dir + "/../lib/")
