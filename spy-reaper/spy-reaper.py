@@ -6,8 +6,10 @@ import os
 if sys.version_info.major < 3:
     sys.stderr.write("Python 3 is required.\n")
     sys.exit(1)
-
-alternate_path = "/opt/twsapi/pythonclient"
+if os.name == "nt":
+    alternate_path = "C:\TWS API\source\pythonclient"
+else:
+    alternate_path = "/opt/twsapi/pythonclient"
 
 try:
     import ibapi
