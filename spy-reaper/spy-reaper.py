@@ -26,8 +26,9 @@ tws_api_ver = ibapi.get_version_string()
 tws_req_ver = "9.73.2"
 
 if tws_api_ver != tws_req_ver:
-    raise sys.stderr.write("twsapi version '{0}' required, version installed is '{1}'".format(tws_req_ver, tws_api_ver))
-
+    sys.stderr.write("twsapi version '{0}' required, version installed is '{1}'\n".format(tws_req_ver, tws_api_ver))
+    sys.exit(1)
+                
 # Import our modules
 script_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(script_dir + "/../lib/")
