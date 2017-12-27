@@ -1,4 +1,4 @@
-# Author Jamiel & Tyler
+# Author Jamiel, Tyler, and Michael.
 import sys
 import os
 
