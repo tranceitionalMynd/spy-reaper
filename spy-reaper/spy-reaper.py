@@ -1,10 +1,13 @@
 # Author Jamiel, Tyler, and Michael.
 import sys
 import os
+from distutils.version import StrictVersion
+from platform import python_version
 
 # System sanity checks
-if sys.version_info.major < 3:
-    sys.stderr.write("Python 3 is required.\n")
+python_version_req = StrictVersion("3.1")
+if StrictVersion(python_version()) < python_version_req:
+    sys.stderr.write("Python 3.1 or greater is required.\n")
     sys.exit(1)
 if os.name == "nt":
     alternate_path = "C:\\TWS API\\source\\pythonclient"
@@ -23,7 +26,7 @@ except ImportError:
         
 #TWS API version check, please see if this works.    
 tws_api_ver = ibapi.get_version_string()
-tws_req_ver = "9.73.2"
+tws_req_ver = StrictVersion("9.73.2")
 
 if tws_api_ver != tws_req_ver:
     sys.stderr.write("twsapi version '{0}' required, version installed is '{1}'\n".format(tws_req_ver, tws_api_ver))
