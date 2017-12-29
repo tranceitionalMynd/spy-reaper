@@ -1,4 +1,4 @@
-# Author Jamiel, Tyler, and Michael.
+# Author Jamiel, Tyler, Michael, and Connor.
 import sys
 import os
 from distutils.version import StrictVersion
@@ -30,7 +30,7 @@ tws_req_ver = StrictVersion("9.73.2")
 if tws_api_ver != tws_req_ver:
     sys.stderr.write("twsapi version '{0}' required, version installed is '{1}'\n".format(tws_req_ver, tws_api_ver))
     sys.exit(1)
-                
+
 # Import our modules
 script_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(script_dir + "/../lib/")
