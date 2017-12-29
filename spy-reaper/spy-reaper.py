@@ -24,7 +24,6 @@ except ImportError:
         sys.stderr.write("twsapi 973.05 must be installed under a system path or '{0}'\n".format(alternate_path))
         sys.exit(1)
         
-#TWS API version check, please see if this works.    
 tws_api_ver = StrictVersion(ibapi.get_version_string())
 tws_req_ver = StrictVersion("9.73.2")
 
