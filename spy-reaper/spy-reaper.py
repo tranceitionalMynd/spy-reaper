@@ -1,7 +1,7 @@
 # Author Jamiel, Tyler, and Michael.
 import sys
 import os
-from distutils.version import StrictVersion
+from distutils.version import StrictVersion, LooseVersion
 from platform import python_version
 
 # System sanity checks
@@ -46,7 +46,13 @@ def main():
     client_app.connect("127.0.0.1", port, clientId=0)
     sys.stderr.write("serverVersion:{0}\nconnectionTime:{1}\n".format(client_app.serverVersion(), client_app.twsConnectionTime()))
     sys.stderr.write("Handling incoming messages.\n")
+    server_ver_req = LooseVersion("124")
+    server_ver = LooseVersion(str(client_app.serverVersion()))
+    if server_ver < server_ver_req:
+        sys.stderr.write("Server version required is '124', server version installed '{0}' \n".format(server_ver))
+        sys.exit(1)
     client_app.run()
+    
 
 if __name__ == "__main__":
     main()
