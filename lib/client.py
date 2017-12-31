@@ -2,6 +2,7 @@ import sys
 
 from ibapi.wrapper import EWrapper
 from ibapi.client import EClient
+from ibapi.utils import iswrapper
 
 class Wrapper(EWrapper):
     pass
@@ -16,16 +17,19 @@ class ClientApp(Wrapper, Client):
         Client.__init__(self, wrapper=self)
         self.started = False
 
+    @iswrapper
     def connectAck(self):
         if self.async:
             self.startApi()
 
+    @iswrapper
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
 
         self.nextValidOrderId = orderId
         self.start()
 
+    @iswrapper
     def start(self):
         if self.started:
             return
