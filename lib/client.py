@@ -37,3 +37,8 @@ class ClientApp(Wrapper, Client):
         self.started = True
         sys.stderr.write("Client is connected. Executing requests.\n")
         self.reqGlobalCancel()
+
+    @iswrapper
+    def keyboardInterrupt(self):
+        self.done = True
+
