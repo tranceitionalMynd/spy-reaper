@@ -48,7 +48,7 @@ def main():
     server_ver_req = LooseVersion("124")
     server_ver = LooseVersion(str(client_app.serverVersion()))
     if server_ver < server_ver_req:
-        sys.stderr.write("Server version required is '124', server version installed '{0}' \n".format(server_ver))
+        sys.stderr.write("Server version required is '{0}', server version installed '{1}' \n".format(server_ver_req, server_ver))
         sys.exit(1)
     client_app.run()
     
