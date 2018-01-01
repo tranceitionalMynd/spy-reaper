@@ -12,8 +12,7 @@ The manipulated stock is SPY- the S&P 500 ETF.
 
 Requires:
 * Python 3
-* pandas
-* TWS API 973.05 installed under a system path or '/opt/ibapi-beta/'
+* TWS API 973.05 'pythonclient' directory installed under a system path or '/opt/ibapi-beta/' (Unix/Mac) or 'C:\\TWS API\\' (Windows)
 * A running TWS or IB Gateway application to connect to
 
 Project Status:
