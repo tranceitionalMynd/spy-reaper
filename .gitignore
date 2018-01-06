@@ -6,7 +6,9 @@
 *.log
 scanner.xml
 ui/node_modules/
-
 ui/package-lock\.json
-
 ui/package\.json
+.eslintrc.json
+package-lock.json
+.gitignore
+node_modules/
