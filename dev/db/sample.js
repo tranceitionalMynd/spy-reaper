@@ -1,6 +1,6 @@
 conn = new Mongo();
 db = conn.getDB('sample');
-db = db.getSiblingDB('accountHistory');
+db = db.getSiblingDB('algorithmHistory');
 
 db.transactions.find().forEach( function(thisDoc) {
     db.transactions.remove({ "_id" : thisDoc._id });
